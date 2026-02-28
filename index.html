@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mount Hope Tech Node</title>
+    <style>
+        :root {
+            --chipotle-red: #450006;
+            --chipotle-tan: #f5f0e1;
+            --dark-bg: #1a1a1a;
+            --text-gold: #d4af37;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--chipotle-tan);
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: var(--chipotle-red);
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--text-gold);
+        }
+        .node-container {
+            margin-top: 50px;
+            padding: 30px;
+            border: 2px solid var(--text-gold);
+            border-radius: 15px;
+            background: rgba(0,0,0,0.5);
+            width: 80%;
+            max-width: 500px;
+        }
+        .login-btn {
+            background-color: var(--chipotle-red);
+            color: white;
+            border: 1px solid var(--text-gold);
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .floating-add {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #007bff;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MOUNT HOPE NODE</h1>
+    </div>
+    
+    <div class="node-container" id="mainDisplay">
+        <h2>System Status: Active</h2>
+        <p>Nuclear Research Funding Goal: $1,200</p>
+        <p>Current Reactor Specs: Grade 1 Titanium / D2O</p>
+        <input type="password" id="passInput" placeholder="Enter Director Key">
+        <button class="login-btn" onclick="checkLogin()">Access Node</button>
+    </div>
+
+    <div class="floating-add" onclick="alert('Creating New Project...')">+</div>
+
+    <script>
+        function checkLogin() {
+            const pass = document.getElementById('passInput').value;
+            if (pass === 'Cc410010797') {
+                document.getElementById('mainDisplay').innerHTML = "<h2>Director Authenticated</h2><p>Welcome, Cash. Ready to build.</p>";
+            } else {
+                alert('Access Denied: Use Sponsor Verified Key');
+            }
+        }
+    </script>
+</body>
+</html>
